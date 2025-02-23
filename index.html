@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battute con chucknorris</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <select name="scelta" id="scelta">
+    <option value="animal">Animali</option>
+    <option value="food">Cibo</option>
+    <option value="movie">Film</option>
+    <option value="music">Musica</option>
+    <option value="sport">Sport</option>
+</select>
+
+<button id="Invia">Ottieni la battuta</button>
+
+
+
+
+
+
+
+
+
+<script>
+    document.querySelector("#Invia").addEventListener("click", function(){
+        let category = document.querySelector("#scelta").value;
+        let url = 'https://api.chucknorris.io/jokes/random?category={category}';
+        fetch(url)
+        .then(response => response.json())
+        .then(data => console.log(data.value))
+        .catch(error => console.error("Errore:", error));
+        });
+        </script>
+</body>
+</html>
+      
