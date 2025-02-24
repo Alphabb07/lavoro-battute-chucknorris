@@ -16,7 +16,8 @@
 </select>
 
 <button id="Invia">Ottieni la battuta</button>
-
+<br>
+<h2 id="stampa"></h2>
 
 
 
@@ -31,7 +32,7 @@
         let url = `https://api.chucknorris.io/jokes/random?category=${category}`;
         fetch(url)
         .then(response => response.json())
-        .then(data => console.log(data.value))
+        .then(data => document.querySelector("#stampa").innerHTML=data.value)
         .catch(error => console.error("Errore:", error));
     });
 </script>
