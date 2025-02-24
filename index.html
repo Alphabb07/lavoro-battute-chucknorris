@@ -26,15 +26,15 @@
 
 
 <script>
-    document.querySelector("#Invia").addEventListener("click", function(){
-        let category = document.querySelector("#scelta").value;
-        let url = 'https://api.chucknorris.io/jokes/random?category={category}';
+    document.getElementById('Invia').addEventListener('click', function(){
+        let category = document.getElementById('scelta').value;
+        let url = `https://api.chucknorris.io/jokes/random?category=${category}`;
         fetch(url)
         .then(response => response.json())
         .then(data => console.log(data.value))
         .catch(error => console.error("Errore:", error));
-        });
-        </script>
+    });
+</script>
 </body>
 </html>
       
