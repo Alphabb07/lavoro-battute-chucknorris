@@ -26,3 +26,6 @@ cursor: pointer;
 button:hover{
     background-color: beige;
 }
+.immagine{
+    align-items: center;
+}
